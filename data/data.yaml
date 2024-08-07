@@ -1,0 +1,1109 @@
+
+
+```yaml
+- id: 1
+  key: "app_"
+  title: "Automatic1111 webui"
+  repo_name: "stable-diffusion-webui"
+  github_url: "https://github.com/AUTOMATIC1111/stable-diffusion-webui"
+  git_clone_url: "https://github.com/AUTOMATIC1111/stable-diffusion-webui.git"
+  installed_version: "-"
+  available_version: "-"
+  installed: true
+  visible: true
+  status: 1
+  isIncomplete: false
+  type: "app"
+  install_requirements: false
+  install_cuda: false
+  install_instructions_available: false
+  install_instructions: []
+  download_models_path: ""
+  checkpoints_path: ""
+  entry_point:
+    install: "launch.py"
+    launch: "launch.py"
+  buttons:
+    - button_text: "Update"
+      key: "update"
+    - button_text: "Delete venv"
+      key: "delete_venv"
+    - button_text: "Create venv"
+      key: "create_venv"
+    - button_text: "Uninstall"
+      key: "uninstall"
+  launch_buttons:
+    - button_text: "Launch"
+      key: "launch"
+    - button_text: "Install"
+      key: "install"
+    - button_text: "install_CNet"
+      key: "Install ControlNet"
+  args:
+    - - button_text: "--autolaunch"
+        key: "autolaunch"
+      - button_text: "--theme=dark"
+    - - button_text: "--force-enable-xformers"
+        key: "force-enable-xformers"
+      - button_text: "--xformers"
+        key: "xformers"
+    - - button_text: "--nowebui"
+        key: "nowebui"
+      - button_text: "--no-half"
+    - - button_text: "--lowvram"
+        key: "lowvram"
+      - button_text: "--medvram"
+        key: "medvram"
+      - button_text: "--lowram"
+        key: "lowram"
+    - - button_text: "--share"
+        key: "share"
+      - button_text: "--listen"
+        key: "listen"
+      - button_text: "--api"
+        key: "api"
+    - - button_text: "--enable-insecure-extension-access"
+      - button_text: "--skip-version-check"
+  def_args:
+    - "--autolaunch"
+    - "--theme=dark"
+    - "--force-enable-xformers"
+    - "--xformers"
+  description:
+    - "Most popular Stable Diffusion user interface, fully-featured and capable of installing extensions to help create virtually anything."
+  webui_path: ""
+  models_path: ""
+  requirements_file: ""
+  extra_github_url: ""
+
+- id: 19
+  key: "app_"
+  title: "Fooocus"
+  repo_name: "Fooocus"
+  github_url: "https://github.com/lllyasviel/Fooocus"
+  git_clone_url: "https://github.com/lllyasviel/Fooocus.git"
+  installed_version: "v2.5.2"
+  available_version: "-"
+  installed: false
+  visible: true
+  status: 1
+  isIncomplete: false
+  type: "app"
+  install_requirements: true
+  install_cuda: false
+  install_instructions_available: true
+  install_instructions:
+    - "-m pip install torch==1.13.1 torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu117"
+  download_models_path: ""
+  checkpoints_path: ""
+  entry_point:
+    install: ""
+    launch: "launch.py"
+  buttons:
+    - button_text: "Update"
+      key: "update"
+    - button_text: "Delete venv"
+      key: "delete_venv"
+    - button_text: "Create venv"
+      key: "create_venv"
+    - button_text: "Uninstall"
+      key: "uninstall"
+  launch_buttons:
+    - button_text: "Launch"
+      key: "launch"
+    - button_text: "Install"
+      key: "install"
+  args:
+    - - button_text: ""
+        key: ""
+  def_args: []
+  description: [""]
+  webui_path: ""
+  models_path: ""
+  requirements_file: "requirements_versions.txt"
+  extra_github_url: ""
+
+- id: 3
+  key: "app_"
+  title: "ComfyUI"
+  repo_name: "ComfyUI"
+  github_url: "https://github.com/comfyanonymous/ComfyUI"
+  git_clone_url: "https://github.com/comfyanonymous/ComfyUI.git"
+  installed_version: "-"
+  available_version: "-"
+  installed: false
+  visible: true
+  status: 1
+  isIncomplete: false
+  type: "app"
+  install_requirements: true
+  install_cuda: false
+  install_instructions_available: true
+  install_instructions:
+    - "-m pip install torch==1.13.1 torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu117"
+  download_models_path: "https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.safetensors"
+  checkpoints_path: "models\checkpoints"
+  entry_point:
+    install: "main.py"
+    launch: "main.py"
+  buttons:
+    - button_text: "Update"
+      key: "update"
+    - button_text: "Delete venv"
+      key: "delete_venv"
+    - button_text: "Create venv"
+      key: "create_venv"
+    - button_text: "Uninstall"
+      key: "uninstall"
+  launch_buttons:
+    - button_text: "Launch"
+      key: "launch"
+    - button_text: "Install"
+      key: "install"
+  args:
+    - - button_text: "--normalvram"
+        key: "normalvram"
+      - button_text: "--listen"
+        key: "listen"
+  def_args: []
+  description:
+    - "A powerful and modular stable diffusion GUI and backend."
+  webui_path: ""
+  models_path: ""
+  requirements_file: ""
+  extra_github_url: ""
+
+- id: 18
+  key: "app_"
+  title: "VisionCrafter"
+  repo_name: "VisionCrafter"
+  github_url: "https://github.com/diStyApps/VisionCrafter"
+  git_clone_url: "https://github.com/diStyApps/VisionCrafter.git"
+  installed_version: "-"
+  available_version: "-"
+  installed: false
+  visible: true
+  status: 1
+  isIncomplete: false
+  type: "app"
+  install_requirements: false
+  install_cuda: false
+  install_instructions_available: false
+  install_instructions: []
+  download_models_path: ""
+  checkpoints_path: ""
+  entry_point:
+    install: "0_Install_VisionCrafter.bat"
+    launch: "main.py"
+  buttons:
+    - button_text: "Update"
+      key: "update"
+    - button_text: "Delete venv"
+      key: "delete_venv"
+    - button_text: "Create venv"
+      key: "create_venv"
+    - button_text: "Uninstall"
+      key: "uninstall"
+  launch_buttons:
+    - button_text: "Launch"
+      key: "launch"
+    - button_text: "Install"
+      key: "install"
+  args: []
+  def_args: []
+  description:
+    - "VisionCrafter tool can generates animations and music from text, Ideal for producing short videos and GIFs, as well as creating brief cinematic scenes."
+  webui_path: ""
+  models_path: ""
+  requirements_file: ""
+  extra_github_url: ""
+
+- id: 21
+  key: "app_"
+  title: "AudioLDM2"
+  repo_name: "AudioLDM2"
+  github_url: "https://github.com/haoheliu/AudioLDM2"
+  git_clone_url: "https://github.com/diStyApps/AudioLDM2.git"
+  installed_version: "-"
+  available_version: "-"
+  installed: false
+  visible: true
+  status: 1
+  isIncomplete: false
+  type: "app"
+  install_requirements: true
+  install_cuda: false
+  install_instructions_available: false
+  install_instructions: []
+  download_models_path: ""
+  checkpoints_path: ""
+  entry_point:
+    install: "0_install_AudioLDM2.bat"
+    launch: "1_Run_AudioLDM2.bat"
+  buttons:
+    - button_text: "Update"
+      key: "update"
+    - button_text: "Delete venv"
+      key: "delete_venv"
+    - button_text: "Create venv"
+      key: "create_venv"
+    - button_text: "Uninstall"
+      key: "uninstall"
+  launch_buttons:
+    - button_text: "Launch"
+      key: "launch"
+    - button_text: "Install"
+      key: "install"
+  args: []
+  def_args: []
+  description:
+    - "This my fork, 10 seconds limit increased to 50 seconds."
+    - "AudioLDM 2 can generate different types of audio, such as speech, music, and sound effects"
+    - "This repo currently support Text-to-Audio Generation (including Music)"
+  webui_path: ""
+  models_path: ""
+  requirements_file: ""
+  extra_github_url: ""
+
+- id: 2
+  key: "app_"
+  title: "InvokeAI"
+  repo_name: "InvokeAI"
+  github_url: "https://github.com/invoke-ai/InvokeAI"
+  git_clone_url: "https://github.com/invoke-ai/InvokeAI.git"
+  installed_version: "-"
+  available_version: "-"
+  installed: false
+  visible: true
+  status: 1
+  isIncomplete: false
+  type: "app"
+  install_requirements: false
+  install_cuda: false
+  install_instructions_available: true
+  install_instructions:
+    - "-m pip install InvokeAI[xformers] --use-pep517 --extra-index-url https://download.pytorch.org/whl/cu118"
+  download_models_path: ""
+  checkpoints_path: ""
+  entry_point:
+    install: "invokeai-configure --root ."
+    launch: "invokeai-web"
+  buttons:
+    - button_text: "Update"
+      key: "update"
+    - button_text: "Delete venv"
+      key: "delete_venv"
+    - button_text: "Create venv"
+      key: "create_venv"
+    - button_text: "Uninstall"
+      key: "uninstall"
+  launch_buttons:
+    - button_text: "Launch"
+      key: "launch"
+    - button_text: "Install"
+      key: "install"
+  args:
+    - - button_text: "--web"
+        key: "web"
+    - - button_text: "--internet"
+        key: "internet"
+      - button_text: "--no-internet"
+        key: "no-internet"
+    - - button_text: "--nsfw_checker"
+        key: "nsfw_checker"
+      - button_text: "--no-nsfw_checker"
+        key: "no-nsfw_checker"
+    - - button_text: "--safety_checker"
+        key: "safety_checker"
+      - button_text: "--no-safety_checker"
+        key: "no-safety_checker"
+    - - button_text: "--embeddings"
+        key: "embeddings"
+      - button_text: "--no-embeddings"
+        key: "no-embeddings"
+  def_args: []
+  description:
+    - "InvokeAI is a leading creative engine for Stable Diffusion models, empowering professionals, artists, and enthusiasts to generate and create visual media using the latest AI-driven technologies."
+  webui_path: ""
+  models_path: ""
+  requirements_file: ""
+  extra_github_url: ""
+
+- id: 4
+  key: "app_"
+  title: "Kohya's GUI"
+  repo_name: "kohya_ss"
+  github_url: "https://github.com/bmaltais/kohya_ss"
+  git_clone_url: "https://github.com/bmaltais/kohya_ss.git"
+  installed_version: "-"
+  available_version: "-"
+  installed: false
+  visible: true
+  status: 1
+  isIncomplete: false
+  type: "app"
+  install_requirements: false
+  install_cuda: false
+  install_instructions_available: false
+  install_instructions: []
+  download_models_path: "https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.safetensors"
+  checkpoints_path: "models\checkpoints"
+  entry_point:
+    install: "setup.bat"
+    launch: "gui.bat"
+  buttons:
+    - button_text: "Update"
+      key: "update"
+    - button_text: "Delete venv"
+      key: "delete_venv"
+    - button_text: "Create venv"
+      key: "create_venv"
+    - button_text: "Uninstall"
+      key: "uninstall"
+  launch_buttons:
+    - button_text: "Launch"
+      key: "launch"
+    - button_text: "Install"
+      key: "install"
+  args:
+    - - button_text: "--inbrowser"
+        key: "inbrowser"
+      - button_text: "--share"
+        key: "share"
+  def_args:
+    - "--inbrowser"
+  description:
+    - "This repository provides a Windows-focused Gradio GUI for Kohya's Stable Diffusion trainers. The GUI allows you to set the training parameters and generate and run the required CLI commands to train the model."
+  webui_path: ""
+  models_path: ""
+  requirements_file: ""
+  extra_github_url: ""
+
+- id: 5
+  key: "app_"
+  title: "Controlnet"
+  repo_name: "sd-webui-controlnet"
+  github_url: "https://github.com/Mikubill/sd-webui-controlnet"
+  git_clone_url: "https://github.com/Mikubill/sd-webui-controlnet.git"
+  installed_version: "-"
+  available_version: "-"
+  installed: false
+  visible: true
+  status: 1
+  isIncomplete: false
+  type: "webui_extension"
+  install_requirements: false
+  install_cuda: false
+  install_instructions_available: false
+  install_instructions: []
+  download_models_path: "https://huggingface.co/datasets/disty/seait_ControlNet1-1-modules-safetensors"
+  checkpoints_path: ""
+  entry_point:
+    install: ""
+    launch: ""
+  buttons:
+    - button_text: "Download Models"
+      key: "download_models"
+    - button_text: "Uninstall"
+      key: "uninstall_webui_extension"
+  launch_buttons:
+    - button_text: "Update"
+      key: "update_webui_extension"
+    - button_text: "Install"
+      key: "install_webui_extension"
+  args: []
+  def_args: []
+  description: []
+  webui_path: "stable-diffusion-webui"
+  models_path: "https://huggingface.co/datasets/disty/seait_ControlNet1-1-modules-safetensors"
+  requirements_file: ""
+  extra_github_url: ""
+
+- id: 6
+  key: "app_"
+  title: "Dreambooth - auto1111 extension"
+  repo_name: "sd_dreambooth_extension"
+  github_url: "https://github.com/d8ahazard/sd_dreambooth_extension"
+  git_clone_url: "https://github.com/d8ahazard/sd_dreambooth_extension.git"
+  installed_version: "-"
+  available_version: "-"
+  installed: false
+  visible: true
+  status: 1
+  isIncomplete: false
+  type: "webui_extension"
+  install_requirements: false
+  install_cuda: false
+  install_instructions_available: false
+  install_instructions: []
+  download_models_path: ""
+  checkpoints_path: ""
+  entry_point:
+    install: ""
+    launch: ""
+  buttons:
+    - button_text: "Uninstall"
+      key: "uninstall_webui_extension"
+  launch_buttons:
+    - button_text: "Update"
+      key: "update_webui_extension"
+    - button_text: "Install"
+      key: "install_webui_extension"
+  args: []
+  def_args: []
+  description: []
+  webui_path: "stable-diffusion-webui"
+  models_path: ""
+  requirements_file: ""
+  extra_github_url: ""
+
+- id: 7
+  key: "app_"
+  title: "Auto-GPT"
+  repo_name: "Auto-GPT"
+  github_url: "https://github.com/Torantulino/Auto-GPT"
+  git_clone_url: "https://github.com/Torantulino/Auto-GPT.git"
+  installed_version: "-"
+  available_version: "-"
+  installed: false
+  visible: true
+  status: 1
+  isIncomplete: false
+  type: "app"
+  install_requirements: true
+  install_cuda: false
+  install_instructions_available: false
+  install_instructions: []
+  download_models_path: ""
+  checkpoints_path: ""
+  entry_point:
+    install: "run.bat"
+    launch: "run.bat"
+  buttons:
+    - button_text: "Update"
+      key: "update"
+    - button_text: "Delete venv"
+      key: "delete_venv"
+    - button_text: "Create venv"
+      key: "create_venv"
+    - button_text: "Uninstall"
+      key: "uninstall"
+  launch_buttons:
+    - button_text: "Launch"
+      key: "launch"
+    - button_text: "Install"
+      key: "install"
+  args: []
+  def_args: []
+  description:
+    - "Autonomous GPT runs till task complation uses on openai API, Be careful as it might be costly. Additionally, it requires a PINECONE API KEY."
+  webui_path: ""
+  models_path: ""
+  requirements_file: ""
+  extra_github_url: ""
+
+- id: 8
+  key: "app_"
+  title: "Text generation web UI"
+  repo_name: "text-generation-webui"
+  github_url: "https://github.com/oobabooga/text-generation-webui"
+  git_clone_url: "https://github.com/oobabooga/text-generation-webui.git"
+  installed_version: "-"
+  available_version: "-"
+  installed: false
+  visible: true
+  status: 1
+  isIncomplete: false
+  type: "app"
+  install_requirements: true
+  install_cuda: false
+  install_instructions_available: true
+  install_instructions:
+    - "-m pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu117"
+    - "-m pip install https://github.com/jllllll/bitsandbytes-windows-webui/raw/main/bitsandbytes-0.37.2-py3-none-any.whl --force-reinstall"
+    - "download-model.py facebook/opt-1.3b"
+  download_models_path: ""
+  checkpoints_path: ""
+  entry_point:
+    install: "server.py"
+    launch: "server.py"
+  buttons:
+    - button_text: "Update"
+      key: "update"
+    - button_text: "Delete venv"
+      key: "delete_venv"
+    - button_text: "Create venv"
+      key: "create_venv"
+    - button_text: "Uninstall"
+      key: "uninstall"
+  launch_buttons:
+    - button_text: "Launch"
+      key: "launch"
+    - button_text: "Install"
+      key: "install"
+  args:
+    - - button_text: "--auto-launch"
+      - button_text: "--theme=dark"
+    - - button_text: "--notebook"
+      - button_text: "--chat"
+    - - button_text: "--cai-chat"
+      - button_text: "--character"
+    - - button_text: "--model"
+      - button_text: "--lora LORA"
+      - button_text: "--model-dir"
+    - - button_text: "--settings"
+      - button_text: "--xformers"
+    - - button_text: "--extensions"
+      - button_text: "--verbose"
+    - - button_text: "--cpu"
+      - button_text: "--auto-devices"
+    - - button_text: "--gpu-memory"
+      - button_text: "--cpu-memory"
+    - - button_text: "--listen"
+        key: "listen"
+      - button_text: "--listen-host"
+      - button_text: "--listen-port=7862"
+    - - button_text: "--gradio-auth-path"
+      - button_text: "--api"
+      - button_text: "--share"
+  def_args:
+    - "--auto-launch"
+    - "--chat"
+  description:
+    - "Text generation web UI is like auto1111 webui for large language models "
+  webui_path: ""
+  models_path: ""
+  requirements_file: ""
+  extra_github_url: ""
+
+- id: 9
+  key: "app_"
+  title: "Stable Karlo"
+  repo_name: "stable-karlo"
+  github_url: "https://github.com/kpthedev/stable-karlo"
+  git_clone_url: "https://github.com/kpthedev/stable-karlo.git"
+  installed_version: "-"
+  available_version: "-"
+  installed: false
+  visible: true
+  status: 1
+  isIncomplete: false
+  type: "app"
+  install_requirements: true
+  install_cuda: false
+  install_instructions_available: true
+  install_instructions:
+    - "-m pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1+cu113 --extra-index-url https://download.pytorch.org/whl/cu113"
+  download_models_path: ""
+  checkpoints_path: ""
+  entry_point:
+    install: "streamlit run app.py"
+    launch: "streamlit run app.py"
+  buttons:
+    - button_text: "Update"
+      key: "update"
+    - button_text: "Delete venv"
+      key: "delete_venv"
+    - button_text: "Create venv"
+      key: "create_venv"
+    - button_text: "Uninstall"
+      key: "uninstall"
+  launch_buttons:
+    - button_text: "Launch"
+      key: "launch"
+    - button_text: "Install"
+      key: "install"
+  args: []
+  def_args: []
+  description:
+    - "Stable diffusion with a basic interface using Streamlit requires more than a 10GB VRAM GPU."
+  webui_path: ""
+  models_path: ""
+  requirements_file: ""
+  extra_github_url: ""
+
+- id: 10
+  key: "app_"
+  title: "SD.Next - A1111 fork"
+  repo_name: "automatic"
+  github_url: "https://github.com/vladmandic/automatic"
+  git_clone_url: "https://github.com/vladmandic/automatic.git"
+  installed_version: "-"
+  available_version: "-"
+  installed: true
+  visible: true
+  status: 1
+  isIncomplete: false
+  type: "app"
+  install_requirements: false
+  install_cuda: false
+  install_instructions_available: false
+  install_instructions: []
+  download_models_path: ""
+  checkpoints_path: ""
+  entry_point:
+    install: "launch.py"
+    launch: "launch.py"
+  buttons:
+    - button_text: "Update"
+      key: "update"
+    - button_text: "Delete venv"
+      key: "delete_venv"
+    - button_text: "Create venv"
+      key: "create_venv"
+    - button_text: "Uninstall"
+      key: "uninstall"
+  launch_buttons:
+    - button_text: "Launch"
+      key: "launch"
+    - button_text: "Install"
+      key: "install"
+  args:
+    - - button_text: "--autolaunch"
+        key: "autolaunch"
+      - button_text: "--theme=dark"
+    - - button_text: "--lowvram"
+        key: "lowvram"
+      - button_text: "--medvram"
+        key: "medvram"
+    - - button_text: "--lowram"
+        key: "lowram"
+      - button_text: "--no-half"
+    - - button_text: "--share"
+        key: "share"
+      - button_text: "--listen"
+        key: "listen"
+  def_args:
+    - "--autolaunch"
+    - "--theme=dark"
+  description:
+    - "'SD.Next' also known as Vladiffsuion is a fork of A1111 webui, diving into the name chaos with flair. This fork promises to deliver more frequent updates for improved stability, enhanced speed, and a selection of pre-installed extensions."
+  webui_path: ""
+  models_path: ""
+  requirements_file: ""
+  extra_github_url: ""
+
+- id: 11
+  key: "app_"
+  title: "Lama Cleaner"
+  repo_name: "lama-cleaner"
+  github_url: "https://github.com/Sanster/lama-cleaner"
+  git_clone_url: "https://github.com/Sanster/lama-cleaner.git"
+  installed_version: "-"
+  available_version: "-"
+  installed: false
+  visible: true
+  status: 1
+  isIncomplete: false
+  type: "app"
+  install_requirements: true
+  install_cuda: false
+  install_instructions_available: true
+  install_instructions:
+    - "-m pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1+cu113 --extra-index-url https://download.pytorch.org/whl/cu113"
+    - "-m pip install lama-cleaner"
+  download_models_path: ""
+  checkpoints_path: ""
+  entry_point:
+    install: "lama-cleaner"
+    launch: "lama-cleaner"
+  buttons:
+    - button_text: "Update"
+      key: "update"
+    - button_text: "Delete venv"
+      key: "delete_venv"
+    - button_text: "Create venv"
+      key: "create_venv"
+    - button_text: "Uninstall"
+      key: "uninstall"
+  launch_buttons:
+    - button_text: "Launch"
+      key: "launch"
+    - button_text: "Install"
+      key: "install"
+  args:
+    - - button_text: "--model=lama"
+      - button_text: "--device=cpu"
+      - button_text: "--port=8080"
+    - - button_text: "--input Path/to/InputFolder"
+      - button_text: "--output-dir Path/to/OutputFolder"
+      - button_text: "--gui"
+  def_args:
+    - "--model=lama"
+    - "--device=cpu"
+    - "--port=8080"
+  description:
+    - "A free and open-source inpainting tool powered by SOTA AI model."
+  webui_path: ""
+  models_path: ""
+  requirements_file: ""
+  extra_github_url: ""
+
+- id: 12
+  key: "app_"
+  title: "Stable Diffusion web UI-UX - A1111 fork"
+  repo_name: "stable-diffusion-webui-ux"
+  github_url: "https://github.com/anapnoe/stable-diffusion-webui-ux"
+  git_clone_url: "https://github.com/anapnoe/stable-diffusion-webui-ux.git"
+  installed_version: "-"
+  available_version: "-"
+  installed: true
+  visible: true
+  status: 1
+  isIncomplete: false
+  type: "app"
+  install_requirements: false
+  install_cuda: false
+  install_instructions_available: false
+  install_instructions: []
+  download_models_path: ""
+  checkpoints_path: ""
+  entry_point:
+    install: "launch.py"
+    launch: "launch.py"
+  buttons:
+    - button_text: "Update"
+      key: "update"
+    - button_text: "Delete venv"
+      key: "delete_venv"
+    - button_text: "Create venv"
+      key: "create_venv"
+    - button_text: "Uninstall"
+      key: "uninstall"
+  launch_buttons:
+    - button_text: "Launch"
+      key: "launch"
+    - button_text: "Install"
+      key: "install"
+  args:
+    - - button_text: "--autolaunch"
+        key: "autolaunch"
+      - button_text: "--theme=dark"
+    - - button_text: "--force-enable-xformers"
+        key: "force-enable-xformers"
+      - button_text: "--xformers"
+        key: "xformers"
+    - - button_text: "--nowebui"
+        key: "nowebui"
+      - button_text: "--no-half"
+    - - button_text: "--lowvram"
+        key: "lowvram"
+      - button_text: "--medvram"
+        key: "medvram"
+      - button_text: "--lowram"
+        key: "lowram"
+    - - button_text: "--share"
+        key: "share"
+      - button_text: "--listen"
+        key: "listen"
+      - button_text: "--api"
+        key: "api"
+    - - button_text: "--enable-insecure-extension-access"
+      - button_text: "--skip-version-check"
+  def_args:
+    - "--autolaunch"
+    - "--theme=dark"
+    - "--force-enable-xformers"
+    - "--xformers"
+  description:
+    - "One more fork of Automatic1111 web UI has a beautiful user interface and many additional features. It appears to be well-maintained."
+  webui_path: ""
+  models_path: ""
+  requirements_file: ""
+  extra_github_url: ""
+
+- id: 13
+  key: "app_"
+  title: "Kandinsky 2.1 - webui"
+  repo_name: "Kandinsky-2"
+  github_url: "https://github.com/adrianpuiu/kandinsky"
+  git_clone_url: "https://github.com/adrianpuiu/kandinsky.git"
+  installed_version: "-"
+  available_version: "-"
+  installed: false
+  visible: true
+  status: 1
+  isIncomplete: false
+  type: "app"
+  install_requirements: false
+  install_cuda: false
+  install_instructions_available: true
+  install_instructions:
+    - "-m pip install torch==1.13.1 torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu117"
+    - "-m pip install git+https://github.com/ai-forever/Kandinsky-2.git"
+    - "-m pip install git+https://github.com/openai/CLIP.git"
+    - "-m pip install opencv-python"
+    - "-m pip install gradio"
+  download_models_path: ""
+  checkpoints_path: ""
+  entry_point:
+    install: "app.py"
+    launch: "app.py"
+  buttons:
+    - button_text: "Update"
+      key: "update"
+    - button_text: "Delete venv"
+      key: "delete_venv"
+    - button_text: "Create venv"
+      key: "create_venv"
+    - button_text: "Uninstall"
+      key: "uninstall"
+  launch_buttons:
+    - button_text: "Launch"
+      key: "launch"
+    - button_text: "Install"
+      key: "install"
+  args: []
+  def_args: []
+  description:
+    - "A Kandinsky web user interface for https://github.com/ai-forever/Kandinsky-2, requires more than a 8GB VRAM GPU."
+  webui_path: ""
+  models_path: ""
+  requirements_file: ""
+  extra_github_url: "https://github.com/ai-forever/Kandinsky-2"
+
+- id: 14
+  key: "app_"
+  title: "Ckpt2Safetensors-Conversion-Tool-GUI"
+  repo_name: "ckpt2Safetensors-Conversion-Tool-GUI"
+  github_url: "https://github.com/diStyApps/Safe-and-Stable-Ckpt2Safetensors-Conversion-Tool-GUI"
+  git_clone_url: "https://github.com/diStyApps/Safe-and-Stable-Ckpt2Safetensors-Conversion-Tool-GUI.git"
+  installed_version: "-"
+  available_version: "-"
+  installed: false
+  visible: true
+  status: 1
+  isIncomplete: false
+  type: "app"
+  install_requirements: true
+  install_cuda: false
+  install_instructions_available: false
+  install_instructions: []
+  download_models_path: ""
+  checkpoints_path: ""
+  entry_point:
+    install: "run_app_gui.py"
+    launch: "run_app_gui.py"
+  buttons:
+    - button_text: "Update"
+      key: "update"
+    - button_text: "Delete venv"
+      key: "delete_venv"
+    - button_text: "Create venv"
+      key: "create_venv"
+    - button_text: "Uninstall"
+      key: "uninstall"
+  launch_buttons:
+    - button_text: "Launch"
+      key: "launch"
+    - button_text: "Install"
+      key: "install"
+  args: []
+  def_args: []
+  description:
+    - "Effortlessly convert between Stable Diffusion checkpoints and safeTensors with the user-friendly Ckpt2Safetensors Tool-GUI, enabling seamless two-way conversions"
+  webui_path: ""
+  models_path: ""
+  requirements_file: ""
+  extra_github_url: ""
+
+- id: 15
+  key: "app_"
+  title: "Stable-Diffusion-Pickle-Scanner-GUI"
+  repo_name: "Stable-Diffusion-Pickle-Scanner-GUI"
+  github_url: "https://github.com/diStyApps/Stable-Diffusion-Pickle-Scanner-GUI"
+  git_clone_url: "https://github.com/diStyApps/Stable-Diffusion-Pickle-Scanner-GUI.git"
+  installed_version: "-"
+  available_version: "-"
+  installed: false
+  visible: true
+  status: 1
+  isIncomplete: false
+  type: "app"
+  install_requirements: true
+  install_cuda: false
+  install_instructions_available: false
+  install_instructions: []
+  download_models_path: ""
+  checkpoints_path: ""
+  entry_point:
+    install: "run_app_gui.py"
+    launch: "run_app_gui.py"
+  buttons:
+    - button_text: "Update"
+      key: "update"
+    - button_text: "Delete venv"
+      key: "delete_venv"
+    - button_text: "Create venv"
+      key: "create_venv"
+    - button_text: "Uninstall"
+      key: "uninstall"
+  launch_buttons:
+    - button_text: "Launch"
+      key: "launch"
+    - button_text: "Install"
+      key: "install"
+  args: []
+  def_args: []
+  description:
+    - "Better safe than sorry, Stable-Diffusion-Pickle-Scanner-GUI offers an extra layer of protection against potential malicious code. - safetensors models don't need to be scanned."
+  webui_path: ""
+  models_path: ""
+  requirements_file: ""
+  extra_github_url: ""
+
+- id: 16
+  key: "app_"
+  title: "Bark-gui"
+  repo_name: "bark-gui"
+  github_url: "https://github.com/C0untFloyd/bark-gui"
+  git_clone_url: "https://github.com/C0untFloyd/bark-gui.git"
+  installed_version: "-"
+  available_version: "-"
+  installed: false
+  visible: true
+  status: 1
+  isIncomplete: false
+  type: "app"
+  install_requirements: true
+  install_cuda: false
+  install_instructions_available: true
+  install_instructions:
+    - "-m pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118"
+    - "-m pip install tensorboardX"
+  download_models_path: ""
+  checkpoints_path: ""
+  entry_point:
+    install: "webui.py"
+    launch: "webui.py"
+  buttons:
+    - button_text: "Update"
+      key: "update"
+    - button_text: "Delete venv"
+      key: "delete_venv"
+    - button_text: "Create venv"
+      key: "create_venv"
+    - button_text: "Uninstall"
+      key: "uninstall"
+  launch_buttons:
+    - button_text: "Launch"
+      key: "launch"
+    - button_text: "Install"
+      key: "install"
+  args:
+    - - button_text: "-autolaunch"
+      - button_text: "-smallmodels"
+    - - button_text: "-forcecpu"
+      - button_text: "-offloadcpu"
+      - button_text: "-enablemps"
+  def_args:
+    - "-autolaunch"
+  description:
+    - "Original Bark Description:"
+    - "Bark is a transformer-based text-to-audio model created by Suno. Bark can generate highly realistic, multilingual speech as well as other audio - including music, background noise and simple sound effects."
+    - "The model can also produce nonverbal communications like laughing, sighing and crying."
+    - "To support the research community, we are providing access to pretrained model checkpoints ready for inference."
+    - "GUI:"
+    - "This is a simple Web UI for an extended Bark Version using Gradio, meant to be run locally."
+    - "It actually is some kind of Frankenstein-Bark with the original Code as base and various changes/improvements I liked, ripped and improved from these 2 repos:"
+    - "https://github.com/serp-ai/bark-with-voice-clone"
+    - "https://github.com/makawy7/bark-webui (inspired me to even start this)"
+  webui_path: ""
+  models_path: ""
+  requirements_file: ""
+  extra_github_url: ""
+
+- id: 17
+  key: "app_"
+  title: "Whisper-ui"
+  repo_name: "whisper-ui"
+  github_url: "https://github.com/hayabhay/whisper-ui"
+  git_clone_url: "https://github.com/hayabhay/whisper-ui.git"
+  installed_version: "-"
+  available_version: "-"
+  installed: false
+  visible: true
+  status: 1
+  isIncomplete: false
+  type: "app"
+  install_requirements: true
+  install_cuda: false
+  install_instructions_available: true
+  install_instructions:
+    - "-m pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118"
+  download_models_path: ""
+  checkpoints_path: ""
+  entry_point:
+    install: "streamlit run app/01_🏠_Home.py"
+    launch: "streamlit run app/01_🏠_Home.py"
+  buttons:
+    - button_text: "Update"
+      key: "update"
+    - button_text: "Delete venv"
+      key: "delete_venv"
+    - button_text: "Create venv"
+      key: "create_venv"
+    - button_text: "Uninstall"
+      key: "uninstall"
+  launch_buttons:
+    - button_text: "Launch"
+      key: "launch"
+    - button_text: "Install"
+      key: "install"
+  args: []
+  def_args: []
+  description:
+    - "Streamlit UI for OpenAI's Whisper"
+    - "This is a simple Streamlit UI for OpenAI's Whisper speech-to-text model. It let's you download and transcribe media from YouTube videos, playlists, or local files. You can then browse, filter, and search through your saved audio files."
+  webui_path: ""
+  models_path: ""
+  requirements_file: ""
+  extra_github_url: ""
+
+- id: 20
+  key: "app_"
+  title: "VisualClipPicker"
+  repo_name: "VisualClipPicker"
+  github_url: "https://github.com/diStyApps/VisualClipPicker"
+  git_clone_url: "https://github.com/diStyApps/VisualClipPicker.git"
+  installed_version: "-"
+  available_version: "-"
+  installed: false
+  visible: true
+  status: 1
+  isIncomplete: false
+  type: "app"
+  install_requirements: false
+  install_cuda: false
+  install_instructions_available: false
+  install_instructions: []
+  download_models_path: ""
+  checkpoints_path: ""
+  entry_point:
+    install: "Install.bat"
+    launch: "main.py"
+  buttons:
+    - button_text: "Update"
+      key: "update"
+    - button_text: "Delete venv"
+      key: "delete_venv"
+    - button_text: "Create venv"
+      key: "create_venv"
+    - button_text: "Uninstall"
+      key: "uninstall"
+  launch_buttons:
+    - button_text: "Launch"
+      key: "launch"
+    - button_text: "Install"
+      key: "install"
+  args: []
+  def_args: []
+  description:
+    - "Visual Clip Picker: Trimming Clips by Face Recognition"
+  webui_path: ""
+  models_path: ""
+  requirements_file: ""
+  extra_github_url: ""
+
+
+```
