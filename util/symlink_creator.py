@@ -46,12 +46,12 @@ def create_symlink_internal(src, dst, verbose=False, use_rollback=True):
                 src_item_path = os.path.join(src, item)
                 dst_item_path = os.path.join(dst, item)
 
-                if not os.path.exists(src_item_path):
-                    if verbose:
-                        print(f"Moving {dst_item_path} to {src_item_path}")
+###                if not os.path.exists(src_item_path):
+                if verbose:
+                    print(f"Moving {dst_item_path} to {src_item_path}")
 
-                    shutil.move(dst_item_path, src_item_path)
-                    moved_items.append(item)
+                shutil.move(dst_item_path, src_item_path)
+                moved_items.append(item)
 
             os.rmdir(dst)
         os.symlink(src, dst, target_is_directory=True)
@@ -71,7 +71,7 @@ def create_symlink(src, dst, verbose=False, use_rollback=True):
         return True
 
     except Exception as e:
-        # print(f"Failed to create symlink: {e}")
+        #print(f"Failed to create symlink: {e}")
         return False
 
 def remove_symlink(symlink_path, create_folder=False):
