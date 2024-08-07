@@ -60,63 +60,118 @@ def uninstall(project_data,args=[]):
     subprocess.run(["rd", "/s", "/q", project_path], shell=True)
     print(f"{project_data['repo_name']} uninstalled {project_path} folder deleted.")
 
+#def launch(project_data, args=[]):
+#    project_path = get_project_path(project_data)
+#    venv_path = get_venv_path(project_data)
+#    launch_path = get_entry_point(project_data, 'launch')
+#
+#    print(f"launching {project_data['repo_name']} at {project_path}")
+#    installation_status_venv = installation_status.check_project_venv(project_data)
+#    installation_status_project = installation_status.check_project(project_data)
+#
+#    if not installation_status_venv:
+#        print(f"Virtual environment (venv) not found for {project_data['repo_name']} at {project_path}. Will create a new one.")
+#        install(project_data,args=[])
+#
+#    if installation_status_project:
+#        command_len = len(launch_path.split())
+#        cmd_launch = project_data['entry_point']['launch']
+#        activate_script = f"{venv_path}/Scripts/activate.bat"
+#        cmd_command = f'cmd /K ""{activate_script}" && "{venv_path}/Scripts/python" {cmd_launch} {" ".join(args)}"'
+#        cmd_command_no_py = f'cmd /K ""{activate_script}" && {cmd_launch} {" ".join(args)}"'
+#
+#        if launch_path.endswith(".py") and command_len == 1:
+#            subprocess.run([f"{venv_path}/Scripts/python", launch_path, *args], cwd=project_path)
+#        elif launch_path.endswith(".py") and command_len > 1:
+#            subprocess.run(cmd_command, cwd=project_path, shell=True)           
+#        elif launch_path.endswith(".bat"):
+#            subprocess.run([launch_path, *args], cwd=project_path)
+#        else:
+#            subprocess.run(cmd_command_no_py, cwd=project_path, shell=True)      
+#    else:
+#        print(f"Failed to launch {project_data['repo_name']} venv not installed.")
+
 def launch(project_data, args=[]):
     project_path = get_project_path(project_data)
     venv_path = get_venv_path(project_data)
     launch_path = get_entry_point(project_data, 'launch')
 
-    print(f"launching {project_data['repo_name']} at {project_path}")
+    # if project_data['install_instructions_available']:
+    #     install_instructions(project_data)
+
+    print(f"Launching {project_data['repo_name']} at {project_path}")
+
     installation_status_venv = installation_status.check_project_venv(project_data)
     installation_status_project = installation_status.check_project(project_data)
 
     if not installation_status_venv:
         print(f"Virtual environment (venv) not found for {project_data['repo_name']} at {project_path}. Will create a new one.")
-        install(project_data,args=[])
+        install(project_data, args=[])
 
     if installation_status_project:
-        command_len = len(launch_path.split())
-        cmd_launch = project_data['entry_point']['launch']
-        activate_script = f"{venv_path}/Scripts/activate.bat"
-        cmd_command = f'cmd /K ""{activate_script}" && "{venv_path}/Scripts/python" {cmd_launch} {" ".join(args)}"'
-        cmd_command_no_py = f'cmd /K ""{activate_script}" && {cmd_launch} {" ".join(args)}"'
+        activate_script = f"{venv_path}\\Scripts\\activate.bat"
+        python_exe = f"{venv_path}\\Scripts\\python.exe"
+        cmd_args = " ".join(args) if args else ""
 
-        if launch_path.endswith(".py") and command_len == 1:
-            subprocess.run([f"{venv_path}/Scripts/python", launch_path, *args], cwd=project_path)
-        elif launch_path.endswith(".py") and command_len > 1:
-            subprocess.run(cmd_command, cwd=project_path, shell=True)           
+        # Ensure launch_path is a full path
+        if not os.path.isabs(launch_path):
+            launch_path = os.path.join(project_path, launch_path)
+
+        if launch_path.endswith(".py"):
+            cmd = f'cmd /C "{activate_script} && "{python_exe}" "{launch_path}" {cmd_args}"'
         elif launch_path.endswith(".bat"):
-            subprocess.run([launch_path, *args], cwd=project_path)
+            cmd = f'cmd /C "{activate_script} && call "{launch_path}" {cmd_args}"'
         else:
-            subprocess.run(cmd_command_no_py, cwd=project_path, shell=True)      
+            cmd = f'cmd /C "{activate_script} && "{launch_path}" {cmd_args}"'
+
+        print(f"Executing command: {cmd}")
+
+        try:
+            subprocess.run(cmd, cwd=project_path, shell=True, check=True)
+            print(f"Launch of {project_data['repo_name']} completed successfully.")
+        except subprocess.CalledProcessError as e:
+            print(f"Error during launch of {project_data['repo_name']}: {e}")
+            print(f"Command that failed: {cmd}")
     else:
         print(f"Failed to launch {project_data['repo_name']} venv not installed.")
-        
-def install(project_data,args=[]):
-    project_path = get_project_path(project_data) 
-    print(f"installing {project_data['repo_name']} with at {project_path}")
+
+def install(project_data, args=[]):
+    project_path = get_project_path(project_data)
+    print(f"Installing {project_data['repo_name']} at {project_path}")
+    
     clone_repo(project_data)
     create_virtual_environment(project_data)
+    
     venv_path = get_venv_path(project_data)
-    install_path = get_entry_point(project_data, 'install') 
-
-    command_len = len(install_path.split())
-    cmd_launch = project_data['entry_point']['install']
-    activate_script = f"{venv_path}/Scripts/activate.bat"
-    cmd_command = f'cmd /K ""{activate_script}" && "{venv_path}/Scripts/python" {cmd_launch} {" ".join(args)}"'
-    cmd_command_no_py = f'cmd /K ""{activate_script}" && {cmd_launch} {" ".join(args)}"'
+    install_path = get_entry_point(project_data, 'install')
+    activate_script = f"{venv_path}\\Scripts\\activate.bat"
+    python_exe = f"{venv_path}\\Scripts\\python.exe"
 
     if project_data['install_requirements']:
         install_requirements(project_data)
+    
     if project_data['install_instructions_available']:
-        install_instructions(project_data)    
-    if install_path.endswith(".py") and command_len == 1:
-        subprocess.run([f"{venv_path}/Scripts/python", install_path, *args], cwd=project_path)
-    elif install_path.endswith(".py") and command_len > 1:
-        subprocess.run(cmd_command, cwd=project_path, shell=True)         
+        install_instructions(project_data)
+
+    cmd_args = " ".join(args) if args else ""
+
+    if install_path.endswith(".py"):
+        cmd = f'cmd /C "{activate_script} && "{python_exe}" "{install_path}" {cmd_args}"'
     elif install_path.endswith(".bat"):
-        subprocess.run([install_path, *args], cwd=project_path)
+        cmd = f'cmd /C "{activate_script} && "{install_path}" {cmd_args}"'
     else:
-        subprocess.run(cmd_command_no_py, cwd=project_path, shell=True)         
+        cmd = f'cmd /C "{activate_script} && {install_path} {cmd_args}"'
+
+    print(f"Executing command: {cmd}")
+    
+    try:
+        print(f"Installation of {project_data['repo_name']} completed successfully.")
+        subprocess.run(cmd, cwd=project_path, shell=True, check=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Error during installation of {project_data['repo_name']}: {e}")
+        print(f"Command that failed: {cmd}")
+
+
 
 def delete_virtual_environment(project_data,args=[]):
     venv_path = get_venv_path(project_data)
@@ -132,14 +187,45 @@ def install_cuda(project_data):
     subprocess.run(cmd, shell=True, cwd=project_path)
     print(f"cuda installed")
 
+# def install_requirements(project_data):
+#     project_path = get_project_path(project_data)
+#     venv_path = get_venv_path(project_data)
+#     print(f"Installing requirements for {project_data['repo_name']} at {venv_path}")
+#     if project_data['install_cuda']:
+#         install_cuda(project_data)
+# 
+#     try: subprocess.run([f"{venv_path}/Scripts/python","-m", "pip","install","-r","requirements.txt"], cwd=project_path)
+#     except: print("Oops")
+#     try: subprocess.run([f"{venv_path}/Scripts/python","-m", "pip","install","-r","requirements_versions.txt"], cwd=project_path)
+#     except:print("Oops 2")
+#     
+#     print(f"{project_data['repo_name']} requirements installed at {venv_path}")
+
 def install_requirements(project_data):
     project_path = get_project_path(project_data)
     venv_path = get_venv_path(project_data)
     print(f"Installing requirements for {project_data['repo_name']} at {venv_path}")
     if project_data['install_cuda']:
         install_cuda(project_data)
-    subprocess.run([f"{venv_path}/Scripts/python","-m", "pip","install","-r","requirements.txt"], cwd=project_path)
+
+    # Get the requirements file name, default to "requirements.txt" if not specified
+    requirements_file = project_data.get("requirements_file", "requirements.txt")
+
+    try:
+        subprocess.run([f"{venv_path}/Scripts/python", "-m", "pip", "install", "-r", requirements_file], cwd=project_path, check=True)
+    except subprocess.CalledProcessError:
+        print(f"Failed to install requirements from {requirements_file}")
+    
+    # If the first attempt fails, try the alternate file name
+    if requirements_file != "requirements.txt":
+        try:
+            subprocess.run([f"{venv_path}/Scripts/python", "-m", "pip", "install", "-r", "requirements.txt"], cwd=project_path, check=True)
+        except subprocess.CalledProcessError:
+            print("Failed to install requirements from requirements.txt")
+    
     print(f"{project_data['repo_name']} requirements installed at {venv_path}")
+
+
 
 def install_instructions(project_data):
     project_path = get_project_path(project_data)
