@@ -50,6 +50,16 @@ def create_layout(lang_data,tools):
         "Symlink",
     ]
 
+    warning_lines = [line['text'] for line in lang_data['warning_symlink_msg']]
+    warning_message = '\n'.join(warning_lines)
+
+    # Calculate the number of lines
+    num_lines = len(warning_lines)
+    
+    # Adjust the size based on the number of lines (add a little extra for padding)
+    ml_height = num_lines + 20  # +2 for some extra space
+    ml_width = 50  # Adjust this value based on your layout needs    
+
     col1 = [
         [
             sg.Frame('',[       
@@ -72,15 +82,27 @@ def create_layout(lang_data,tools):
                             sg.Text(lang_data[LOCAL_CLOSE_RUNNING_PROJECTS],size=(45,2),font=FONT,text_color=color.RED_ORANGE,background_color=color.DARK_GRAY),
                         ],         
                         [
-                            sg.ML(f"""
-{lang_data[LOCAL_WARNING_SYMLINK_MSG]}
-""",
-                            font=FONT,text_color=color.LIGHT_GRAY,background_color=color.DARK_GRAY,size=(10,10),expand_x=True,expand_y=True,visible=True,no_scrollbar=True,disabled=True),
-                        ],  
-                ],expand_x=True,expand_y=False,border_width=5,pad=(5,5),size=(250,200),relief=sg.RELIEF_FLAT,element_justification="c",background_color=color.DARK_GRAY),        
-        ],
-
-    ]
+                            sg.ML(warning_message,
+                                font=FONT,
+                                text_color=color.LIGHT_GRAY,
+                                background_color=color.DARK_GRAY,
+                                size=(ml_width, ml_height),
+                                expand_x=True,
+                                expand_y=True,        # Changed to False to respect the calculated height
+                                visible=True,
+                                no_scrollbar=True,
+                                disabled=True),
+                        ],                         
+                        ],
+                        expand_x=True, 
+                        expand_y=True, 
+                        border_width=5, 
+                        pad=(5,5), 
+                        relief=sg.RELIEF_FLAT, 
+                        element_justification="c", 
+                        background_color=color.DARK_GRAY),        
+                        ],
+                    ]
 
     
     col2 = [

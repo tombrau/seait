@@ -61,7 +61,77 @@
     "remove": "Remove",
     "models_treasury": "Models Treasury",
     "warning": "Warning",
-    "warning_symlink_msg": "This operation will manipulate the target folder and its contents. It will move the contents of the target folder to the source folder and create a symlink to the target folder. It is strongly recommended that you back up your data before proceeding with the operation.",
+    "warning_symlink_msg": [
+        {
+            "line": 0,
+            "text": "This operation will manipulate the target folder and its contents."
+          },
+          {
+            "line": 1,
+            "text": "It will move the contents of the target folder to the source folder and create a symlink to the target folder."
+          },
+          {
+            "line": 2,
+            "text": "It is strongly recommended that you back up your data before proceeding with the operation."
+          },
+          {
+            "line": 3,
+            "text": ""
+          },
+          {
+            "line": 4,
+            "text": "Example Create:"
+          },
+          {
+            "line": 5,
+            "text": "  Source = 'D:\\Projects\\AI\\_Models'"
+          },
+          {
+            "line": 6,
+            "text": "  target = 'D:\\Projects\\AI\\diSty\\Fooocus\\models'"
+          },
+          {
+            "line": 7,
+            "text": ""
+          },
+          {
+            "line": 8,
+            "text": "Code in question:"
+          },
+          {
+            "line": 9,
+            "text": "   res=symlink.create_symlink("
+          },
+          {
+            "line": 10,
+            "text": "    source,"
+          },
+          {
+            "line": 11,
+            "text": "    target,"
+          },
+          {
+            "line": 12,
+            "text": "    verbose=True,"
+          },
+          {
+            "line": 13,
+            "text": "    use_rollback=True)"
+          },
+          {
+            "line": 14,
+            "text": ""
+          },
+          {
+            "line": 15,
+            "text": "Example Remove:"
+          },
+          {
+            "line": 16,
+            "text": "  target = 'D:\\Projects\\AI\\diSty\\Fooocus\\models'"
+          }
+        
+      ],
     "add": "add",
     "remove_symlink_tooltip": "Paste or type the folder path to remove.",
     "create": "Create",

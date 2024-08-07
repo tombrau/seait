@@ -1,4 +1,5 @@
 import PySimpleGUI as sg
+
 import re
 from threading import Thread
 import webbrowser
@@ -95,6 +96,7 @@ def main():
     #endregion nav
 
     def run_project_func(project,method,args=None):
+        # this is causing a problem
         project_funcs.methods[method](project,args) 
         window.write_event_value(f"-select_app_{project['id']}_btn-","")    
 

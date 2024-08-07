@@ -80,9 +80,9 @@ INSTALLED_PYTHON_VERSION_LBL = '-installed_python_version_lbl-'
 DEP_APP_GIT_INSTALLED_VERSION_FRAME_KEY = '-dep_app_git_installed_version_frame-'
 PRE_INSTALLED_VERSION_LBL = '-pre_installed_version_lbl-'
 
-INSTALLERS_PYTHON_PATH = 'data\installers\python-3.10.6-amd64.exe'
-INSTALLERS_GIT_PATH = 'data\installers\Git-2.40.0-64-bit.exe'
-PRE_INSTALLED_PYTHON_PATH = 'data\Python3106\python.exe'
+INSTALLERS_PYTHON_PATH = 'data/installers/python-3.10.6-amd64.exe'
+INSTALLERS_GIT_PATH = 'data/installers/Git-2.40.0-64-bit.exe'
+PRE_INSTALLED_PYTHON_PATH = 'data/Python3106/python.exe'
 
 
 CHECK_UPDATE_BTN_KEY = '-check_update_btn-'
